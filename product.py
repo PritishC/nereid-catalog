@@ -101,7 +101,7 @@ class ProductTemplate:
         """
         Getter for `images` function field
         """
-        return map(int, filter(
+        return self.static_files and map(int, filter(
             lambda static_file: 'image' in static_file.mimetype,
             self.static_files
         ))
@@ -463,7 +463,7 @@ class Product:
         """
         Getter for `images` function field
         """
-        return map(int, filter(
+        return self.static_files and map(int, filter(
             lambda static_file: 'image' in static_file.mimetype,
             self.static_files
         ))
